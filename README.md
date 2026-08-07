@@ -314,19 +314,98 @@ All attacker actions were successfully detected using Microsoft Sentinel and Sys
 
 # Repository Structure
 
+```text
 SOC-Incident-Response-Lab/
 │
+├── README.md
+│
 ├── 01-Lab-Deployment/
+│   ├── Azure VM Deployment
+│   ├── Sysmon Installation
+│   ├── Azure Monitor Agent
+│   └── Microsoft Sentinel Onboarding
+│
 ├── 02-Reconnaissance/
+│   ├── Nmap Port Scanning
+│   ├── WHOIS Enumeration
+│   ├── Reverse DNS Lookup
+│   └── RDP Service Discovery
+│
 ├── 03-Initial-Access/
+│   ├── RDP Authentication Attempts
+│   ├── Event ID 4625 Analysis
+│   ├── Event ID 4624 Analysis
+│   └── Authentication Timeline
+│
 ├── 04-PowerShell-Execution/
+│   ├── Process Creation
+│   ├── Process Lineage
+│   ├── Network Connections
+│   ├── File Creation
+│   └── Encoded PowerShell
+│
 ├── 05-Discovery/
+│   ├── whoami
+│   ├── net user
+│   ├── Account Discovery
+│   └── System Owner Discovery
+│
 ├── 06-Persistence/
+│   ├── Registry Run Keys
+│   ├── Windows Update Masquerading
+│   └── Registry Hunting
+│
 ├── 07-Ingress-Tool-Transfer/
+│   ├── BITSAdmin Download
+│   ├── Network Investigation
+│   └── Downloaded File Analysis
+│
 ├── 08-Scheduled-Task-Abuse/
+│   ├── Scheduled Task Creation
+│   ├── Task Execution
+│   └── Child PowerShell Process
+│
 ├── 09-Threat-Hunting/
+│   ├── Authentication Hunting
+│   ├── Process Hunting
+│   ├── Registry Hunting
+│   ├── PowerShell Hunting
+│   └── IOC Validation
+│
 ├── 10-KQL-Queries/
+│   ├── Process Queries
+│   ├── Authentication Queries
+│   ├── Registry Queries
+│   ├── Network Queries
+│   └── Threat Hunting Queries
+│
 ├── 11-MITRE-Mapping/
+│   ├── ATT&CK Matrix
+│   ├── Technique Mapping
+│   └── Detection Coverage
+│
 ├── 12-Incident-Response-Report/
-├── Images/
-└── README.md
+│   ├── Executive Summary
+│   ├── Timeline of Events
+│   ├── Indicators of Compromise
+│   ├── Findings
+│   ├── Recommendations
+│   └── Lessons Learned
+│
+└── Images/
+    ├── Azure Deployment
+    ├── Sentinel Detections
+    ├── PowerShell Abuse
+    ├── Threat Hunting
+    └── Investigation Screenshots
+```
+
+---
+
+# Author
+
+Daniel Nwachukwu
+
+SOC Analyst | Microsoft Sentinel | Azure | Sysmon | KQL | Threat Hunting | Incident Response
+
+---
