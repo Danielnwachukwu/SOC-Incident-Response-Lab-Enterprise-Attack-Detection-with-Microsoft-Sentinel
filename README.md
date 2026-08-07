@@ -1,170 +1,322 @@
-# SOC-Incident-Response-Lab-Enterprise-Attack-Detection-with-Microsoft-Sentinel
-Simulated enterprise intrusion investigation demonstrating how Microsoft Sentinel, Sysmon, Azure Virtual Machines, and PowerShell telemetry can be used to detect, investigate, and respond to a multiEnterprise Windows Intrusion Detection & Incident Response using Microsoft Sentinel, Sysmon, Azure, and PowerShell
+# Microsoft Sentinel SOC Incident Response Lab
 
-Executive Summary
+Enterprise SOC Investigation | Microsoft Sentinel | Sysmon | Microsoft Azure | MITRE ATT&CK
 
-A multinational financial services organization experienced multiple suspicious authentication attempts against a publicly exposed Windows Server hosted in Microsoft Azure. Shortly after a successful Remote Desktop Protocol (RDP) login, the endpoint began exhibiting attacker-like behavior, including PowerShell execution, system reconnaissance, registry modifications for persistence, encoded PowerShell commands, file downloads, scheduled task creation, and abuse of native Windows utilities such as BITSAdmin.
+---
 
-To determine whether the activity represented legitimate administration or an active compromise, the organization's Security Operations Center (SOC) initiated a full incident investigation using Microsoft Sentinel, Sysmon, Windows Event Logs, and MITRE ATT&CK-based threat hunting techniques.
+# Business Challenge
 
-This project recreates that investigation from initial reconnaissance through post-compromise activity, demonstrating how defenders can detect, investigate, and correlate attacker actions across multiple telemetry sources while documenting evidence suitable for incident response reporting.
+A multinational organization recently migrated critical Windows infrastructure to Microsoft Azure to support its remote workforce.
 
-Business Challenge (Statement of Problem)
+Following the migration, the Security Operations Center (SOC) began observing suspicious authentication attempts, PowerShell activity, registry modifications, scheduled task creation, and outbound network communications originating from a production Windows Server.
 
-Contoso Financial Services (fictional organization) hosts critical business applications on Microsoft Azure. As part of its digital transformation initiative, remote administration is performed through Remote Desktop Protocol (RDP).
+The security team required a complete investigation to determine whether the observed activities represented legitimate administrative behavior or a coordinated cyber attack.
 
-The organization's security team identified an increase in failed authentication attempts targeting externally accessible Windows servers. Shortly afterwards, a successful RDP login was followed by suspicious PowerShell activity originating from the same endpoint.
+The objective of this project was to simulate an enterprise attack, detect every stage using Microsoft Sentinel and Sysmon, correlate the evidence, map attacker behavior to the MITRE ATT&CK framework, and produce a complete incident response investigation.
 
-Security analysts were tasked with determining:
+---
 
-Whether the successful authentication represented unauthorized access.
-What actions were performed after login.
-Whether persistence mechanisms were established.
-Whether files were downloaded onto the server.
-Whether built-in Windows utilities were abused.
-How the attack progressed through the MITRE ATT&CK lifecycle.
-How Microsoft Sentinel could be used to detect and investigate each stage of the intrusion.
-Project Objectives
+# Executive Summary
 
-The primary objectives of this project were to:
+This project demonstrates an end-to-end SOC investigation performed inside Microsoft Sentinel using Sysmon endpoint telemetry collected from an Azure-hosted Windows Server.
 
-Simulate an enterprise Windows intrusion in Azure.
-Generate realistic attacker telemetry.
-Detect attacker activity using Microsoft Sentinel.
-Collect endpoint telemetry using Sysmon.
-Correlate Windows Security Events with Sysmon logs.
-Perform threat hunting using Kusto Query Language (KQL).
-Map observed activity to the MITRE ATT&CK Framework.
-Produce professional SOC investigation findings and incident response documentation.
-Scope
+An attack was simulated from initial reconnaissance through persistence using commonly abused Windows administration tools including PowerShell, Registry Run Keys, Scheduled Tasks, BITSAdmin, and Remote Desktop Protocol.
 
-The project focuses on endpoint detection and incident investigation for a Windows Server hosted in Microsoft Azure.
+Every stage of the attack was detected using Kusto Query Language (KQL), correlated inside Microsoft Sentinel, validated with Sysmon logs, and documented as an incident response investigation.
 
-Activities simulated include:
+---
 
-External reconnaissance
-Network scanning
-Failed RDP authentication attempts
-Successful RDP login
-PowerShell abuse
-Local system discovery
-User enumeration
-Registry persistence
-Encoded PowerShell execution
-File downloads
-BITSAdmin abuse
-Scheduled task persistence
-Threat hunting in Microsoft Sentinel
-Environment
-Component	Technology
-Cloud Platform	Microsoft Azure
-Operating System	Windows Server 2022
-SIEM	Microsoft Sentinel
-Log Analytics	Azure Log Analytics Workspace
-Endpoint Monitoring	Sysmon
-Log Collection	Azure Monitor Agent
-Query Language	Kusto Query Language (KQL)
-Attack Platform	Kali Linux
-Remote Access	RDP
-Scripting	PowerShell
-MITRE Mapping	ATT&CK Enterprise Framework
-Technology Stack
-Microsoft Azure
-Microsoft Sentinel
-Azure Log Analytics
-Sysmon
-Azure Monitor Agent
-Windows Event Logs
-Windows Security Logs
-PowerShell
-Command Prompt
-BITSAdmin
-Task Scheduler
-Kali Linux
-Nmap
-WHOIS
-Dig
-KQL
-MITRE ATT&CK Framework
-Investigation Methodology
+# Project Objectives
 
-The investigation followed a structured SOC workflow:
+This investigation was designed to:
 
-Build the monitoring environment.
-Configure endpoint logging with Sysmon.
-Onboard the endpoint into Microsoft Sentinel.
-Simulate attacker reconnaissance.
-Simulate unauthorized authentication attempts.
-Detect successful remote access.
-Investigate PowerShell execution.
-Identify discovery commands.
-Detect persistence mechanisms.
-Investigate file download activity.
-Correlate endpoint telemetry.
-Map findings to MITRE ATT&CK.
-Produce incident response findings.
-Attack Lifecycle
-Lab Deployment
-      │
-      ▼
-Reconnaissance
-      │
-      ▼
-Initial Access
-(RDP Authentication)
-      │
-      ▼
-Execution
-(PowerShell)
-      │
-      ▼
-Discovery
-      │
-      ▼
-Persistence
-      │
-      ▼
-Ingress Tool Transfer
-      │
-      ▼
-Scheduled Task Execution
-      │
-      ▼
-Incident Investigation
-      │
-      ▼
-Threat Hunting
-      │
-      ▼
-Incident Report
-MITRE ATT&CK Coverage
-Tactic	Techniques Demonstrated
-Reconnaissance	Active Scanning, Network Information Gathering
-Initial Access	Brute Force, Remote Desktop Protocol
-Execution	PowerShell
-Discovery	System Owner Discovery, Process Discovery, Account Discovery, System Information Discovery
-Persistence	Registry Run Keys, Scheduled Tasks
-Defense Evasion	Encoded PowerShell
-Command & Control	BITS Jobs
-Ingress Tool Transfer	PowerShell Download, BITSAdmin
-Skills Demonstrated
-Security Monitoring
-Incident Response
-Threat Hunting
-Digital Forensics
-Endpoint Detection
-Log Correlation
-MITRE ATT&CK Mapping
-KQL Query Development
-PowerShell Investigation
-Windows Security Monitoring
-Azure Security Operations
-Microsoft Sentinel Investigation
-Sysmon Analysis
-Repository Structure
+- Build a Microsoft Sentinel monitoring environment
+- Configure endpoint telemetry using Sysmon
+- Simulate realistic attacker techniques
+- Detect attacker activity with KQL
+- Correlate multiple Sysmon Event IDs
+- Perform threat hunting
+- Map detections to MITRE ATT&CK
+- Produce an incident response report
+
+---
+
+# Scope
+
+The investigation covered the complete attack lifecycle inside an isolated Microsoft Azure environment.
+
+Scope included:
+
+- Azure Windows Server
+- Microsoft Sentinel
+- Sysmon
+- Azure Monitor Agent
+- PowerShell
+- Windows Event Logs
+- Remote Desktop Protocol
+- MITRE ATT&CK Mapping
+
+---
+
+# Technology Stack
+
+Infrastructure:
+
+- Microsoft Azure
+- Windows Server
+- Kali Linux
+
+Monitoring:
+
+- Microsoft Sentinel
+- Azure Log Analytics
+- Azure Monitor Agent
+- Sysmon
+
+Security Analysis:
+
+- Kusto Query Language (KQL)
+- MITRE ATT&CK Framework
+
+Attack Tools:
+
+- PowerShell
+- Nmap
+- BITSAdmin
+- Windows Registry
+- Scheduled Tasks
+- RDP
+
+---
+
+# Investigation Methodology
+
+The investigation followed a structured SOC workflow beginning with infrastructure deployment and ending with incident reporting.
+
+---
+
+## 01. Environment Deployment
+
+A Microsoft Azure Windows Server was deployed and configured for endpoint monitoring.
+
+Activities included:
+
+- Azure VM deployment
+- Windows Server configuration
+- Sysmon installation
+- Azure Monitor onboarding
+- Microsoft Sentinel onboarding
+- Log validation
+
+---
+
+## 02. Reconnaissance
+
+The attacker performed external reconnaissance against the Azure-hosted Windows Server.
+
+Activities included:
+
+- Service discovery
+- Port scanning
+- WHOIS enumeration
+- Reverse DNS lookup
+- RDP port verification
+- Service fingerprinting
+
+---
+
+## 03. Initial Access
+
+The attacker attempted to gain access using Remote Desktop Protocol.
+
+Investigation included:
+
+- Failed RDP authentication
+- Event ID 4625 analysis
+- Authentication timeline
+- Successful authentication
+- Event ID 4624 correlation
+- User validation
+
+---
+
+## 04. PowerShell Execution
+
+Following authentication, PowerShell was used to execute multiple administrative and attacker commands.
+
+SOC investigation focused on:
+
+- Process creation
+- Parent-child process relationships
+- Command-line analysis
+- Network activity
+- File creation
+- PowerShell telemetry
+
+---
+
+## 05. Discovery
+
+The attacker enumerated the compromised system to identify users and operating system information.
+
+Activities included:
+
+- whoami execution
+- net user enumeration
+- Local account discovery
+- User context analysis
+- System owner discovery
+
+---
+
+## 06. Persistence
+
+The attacker established persistence using Registry Run Keys.
+
+SOC investigation focused on:
+
+- Registry Run Key creation
+- Windows Update masquerading
+- Registry monitoring
+- IOC validation
+- Persistence hunting
+
+---
+
+## 07. Defense Evasion
+
+The attacker attempted to conceal malicious activity using encoded PowerShell.
+
+Investigation included:
+
+- Base64 encoded PowerShell
+- Command-line extraction
+- Process lineage
+- Parent process analysis
+- Encoded command detection
+
+---
+
+## 08. Ingress Tool Transfer
+
+BITSAdmin was abused to download content from the Internet.
+
+SOC investigation focused on:
+
+- BITSAdmin execution
+- Process creation
+- Network connections
+- Download verification
+- File creation
+- Download location analysis
+
+---
+
+## 09. Scheduled Task Abuse
+
+Persistence was expanded through scheduled task creation and execution.
+
+Activities included:
+
+- Scheduled task creation
+- Task execution
+- Child PowerShell execution
+- Parent process correlation
+- Scheduled task hunting
+
+---
+
+## 10. Discovery Commands
+
+Following persistence, additional discovery commands were executed.
+
+SOC investigation focused on:
+
+- net user
+- whoami
+- Account discovery
+- User enumeration
+- Command-line reconstruction
+
+---
+
+## 11. Threat Hunting
+
+Threat hunting activities were performed across Microsoft Sentinel to identify attacker behavior.
+
+Activities included:
+
+- Authentication hunting
+- PowerShell hunting
+- Registry hunting
+- Process hunting
+- File hunting
+- Timeline reconstruction
+- IOC validation
+
+---
+
+## 12. MITRE ATT&CK Mapping
+
+The complete investigation was mapped to the MITRE ATT&CK framework.
+
+Coverage included:
+
+- Reconnaissance
+- Initial Access
+- Execution
+- Discovery
+- Persistence
+- Defense Evasion
+- Command and Control
+- Ingress Tool Transfer
+
+---
+
+# Incident Response Summary
+
+The investigation successfully reconstructed the complete attack chain from reconnaissance through persistence.
+
+Key findings included:
+
+- External reconnaissance against exposed services
+- Multiple failed RDP authentication attempts
+- Successful interactive logon
+- PowerShell execution
+- Registry Run Key persistence
+- Encoded PowerShell activity
+- BITSAdmin file download
+- Scheduled Task persistence
+- Local account discovery
+
+All attacker actions were successfully detected using Microsoft Sentinel and Sysmon telemetry.
+
+---
+
+# Skills Demonstrated
+
+- Security Monitoring
+- SOC Operations
+- Incident Response
+- Threat Hunting
+- Digital Forensics
+- Microsoft Sentinel
+- Sysmon Analysis
+- KQL Development
+- Windows Event Analysis
+- Process Investigation
+- Registry Analysis
+- PowerShell Investigation
+- MITRE ATT&CK Mapping
+- Azure Security Monitoring
+
+---
+
+# Repository Structure
+
 SOC-Incident-Response-Lab/
 │
-├── 01-Lab-Setup/
+├── 01-Lab-Deployment/
 ├── 02-Reconnaissance/
 ├── 03-Initial-Access/
 ├── 04-PowerShell-Execution/
@@ -177,4 +329,4 @@ SOC-Incident-Response-Lab/
 ├── 11-MITRE-Mapping/
 ├── 12-Incident-Response-Report/
 ├── Images/
-└── README.md-stage cyber attack mapped to the MITRE ATT&amp;CK framework.
+└── README.md
