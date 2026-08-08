@@ -42,42 +42,18 @@ The investigation successfully reconstructed the attack lifecycle and demonstrat
 
 ## Investigation Workflow
 
-
-Azure Environment Deployment
-        │
-        ▼
-Reconnaissance
-        │
-        ▼
-Initial Access (RDP)
-        │
-        ▼
-PowerShell Execution
-        │
-        ▼
-Discovery
-        │
-        ▼
-Persistence
-        │
-        ▼
-Defense Evasion
-        │
-        ▼
-Ingress Tool Transfer
-        │
-        ▼
-Scheduled Task Abuse
-        │
-        ▼
-Threat Hunting
-        │
-        ▼
-Incident Response
-        │
-        ▼
-Post-Incident Validation
-
+1. **Azure Environment Deployment**
+2. **Reconnaissance**
+3. **Initial Access (RDP)**
+4. **PowerShell Execution**
+5. **Discovery**
+6. **Persistence**
+7. **Defense Evasion**
+8. **Ingress Tool Transfer**
+9. **Scheduled Task Abuse**
+10. **Threat Hunting**
+11. **Incident Response**
+12. **Post-Incident Validation**
 
 Project Objectives
 
