@@ -138,19 +138,58 @@ The investigation followed a structured SOC workflow beginning with infrastructu
 
 The investigation stages were:
 
-Environment Deployment
-Reconnaissance
-Initial Access
-PowerShell Execution
-Discovery
-Persistence
-Defense Evasion
-Ingress Tool Transfer
-Scheduled Task Abuse
-Threat Hunting
-MITRE ATT&CK Mapping
-Incident Response
-Post-Incident Validation
+## Technology Stack
+
+### Environment
+- Microsoft Azure
+- Windows Server
+- Kali Linux
+
+### Security Monitoring
+- Microsoft Sentinel
+- Azure Log Analytics
+- Azure Monitor Agent
+- Sysmon
+
+### Investigation & Detection
+- Kusto Query Language (KQL)
+- Windows Security Event Logs
+- Sysmon telemetry
+- Process analysis
+- Network connection analysis
+- Registry analysis
+- File creation analysis
+- Threat hunting
+- MITRE ATT&CK mapping
+
+### Attack / Administration Tools
+- PowerShell
+- Nmap
+- BITSAdmin
+- RDP
+
+### Persistence Mechanisms
+- Registry Run Keys
+- Scheduled Tasks
+
+## Investigation Methodology
+
+The investigation followed a structured SOC workflow beginning with infrastructure deployment and progressing through reconnaissance, initial access, execution, discovery, persistence, defense evasion, threat hunting, incident response, and post-incident validation.
+
+### Investigation Stages
+
+1. Environment Deployment
+2. Reconnaissance
+3. Initial Access
+4. PowerShell Execution
+5. Discovery
+6. Persistence
+7. Defense Evasion
+8. Ingress Tool Transfer
+9. Scheduled Task Abuse
+10. Threat Hunting
+11. Incident Response
+12. Post-Incident Validation
 
 # 1. Environment Deployment
 
