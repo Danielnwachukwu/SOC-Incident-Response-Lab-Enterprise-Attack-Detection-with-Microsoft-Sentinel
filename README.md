@@ -2211,45 +2211,55 @@ Removing a suspicious process or artifact is not sufficient.
 
 The analyst must verify that persistence mechanisms have not returned and that related activity has stopped.
 
-17. Skills Demonstrated
+## 17. Skills Demonstrated
 
 This project demonstrates practical experience in:
 
-Microsoft Sentinel
-Kusto Query Language (KQL)
-Sysmon
-Azure security monitoring
-Windows event analysis
-SIEM investigation
-Endpoint detection
-Threat hunting
-Process analysis
-PowerShell investigation
-Network investigation
-Persistence analysis
-IOC identification
-MITRE ATT&CK mapping
-Incident response
-Containment and eradication
-Post-incident validation
-Security investigation documentation
-18. Repository Structure
+- Microsoft Sentinel
+- Kusto Query Language (KQL)
+- Sysmon
+- Azure security monitoring
+- Windows event analysis
+- SIEM investigation
+- Endpoint detection
+- Threat hunting
+- Process analysis
+- PowerShell investigation
+- Network investigation
+- Persistence analysis
+- IOC identification
+- MITRE ATT&CK mapping
+- Incident response
+- Containment and eradication
+- Post-incident validation
+- Security investigation documentation
+
+## 18. Repository Structure
+
+```text
 Microsoft-Sentinel-SOC-Incident-Response/
 │
 ├── Images/
-│   │
-│   ├── 01-Lab-Deployment/
-│   ├── 02-Reconnaissance/
-│   ├── 03-Initial-Access/
-│   ├── 04-PowerShell-Execution/
-│   ├── 05-Discovery/
-│   ├── 06-Persistence/
-│   ├── 07-Ingress-Tool-Transfer/
-│   ├── 08-Scheduled-Task-Abuse/
-│   └── 09-Threat-Hunting/
+│
+├── 01-Lab-Deployment/
+│
+├── 02-Reconnaissance/
+│
+├── 03-Initial-Access/
+│
+├── 04-PowerShell-Execution/
+│
+├── 05-Discovery/
+│
+├── 06-Persistence/
+│
+├── 07-Ingress-Tool-Transfer/
+│
+├── 08-Scheduled-Task-Abuse/
+│
+├── 09-Threat-Hunting/
 │
 └── README.md
-
 The Images directory contains the supporting evidence captured throughout the investigation.
 
 Screenshots are organized according to the corresponding attack stage to make the investigation easy to follow and reproduce.
