@@ -597,35 +597,19 @@ Another potentially suspicious process
 
 The process relationship was therefore considered alongside the command line and execution timestamp.
 
-4.7 PowerShell Detection Methodology
+## 4.7 PowerShell Detection Methodology
 
 The detection process followed a structured endpoint investigation workflow:
 
-PowerShell Process Detected
-          │
-          ▼
-Identify Process ID
-          │
-          ▼
-Review Command Line
-          │
-          ▼
-Identify Parent Process
-          │
-          ▼
-Identify User Context
-          │
-          ▼
-Check Network Connections
-          │
-          ▼
-Correlate Timestamps
-          │
-          ▼
-Determine Intent
-          │
-          ▼
-Map to MITRE ATT&CK
+1. PowerShell Process Detected
+2. Identify Process ID
+3. Review Command Line
+4. Identify Parent Process
+5. Identify User Context
+6. Check Network Connections
+7. Correlate Timestamps
+8. Determine Intent
+9. Map to MITRE ATT&CK
 
 This approach prevents the analyst from treating every PowerShell execution as malicious and instead evaluates the complete process context.
 
