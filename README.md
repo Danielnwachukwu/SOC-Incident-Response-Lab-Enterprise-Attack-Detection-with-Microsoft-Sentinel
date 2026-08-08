@@ -753,33 +753,18 @@ The objective was to determine whether the discovery commands were executed as p
 
 Evidence
 
-Discovery Investigation Methodology
+### Discovery Investigation Methodology
 
 The investigation followed a process-oriented approach:
 
-Discovery Command Detected
-          │
-          ▼
-Identify Executing Process
-          │
-          ▼
-Review Command Line
-          │
-          ▼
-Identify User Context
-          │
-          ▼
-Correlate Process ID
-          │
-          ▼
-Review Execution Timestamp
-          │
-          ▼
-Correlate With Previous Activity
-          │
-          ▼
-Determine Attacker Intent
-
+1. **Discovery Command Detected**
+2. **Identify Executing Process**
+3. **Review Command Line**
+4. **Identify User Context**
+5. **Correlate Process ID**
+6. **Review Execution Timestamp**
+7. **Correlate With Previous Activity**
+8. **Determine Attacker Intent**
 This approach allowed the discovery commands to be evaluated within the context of the complete attack timeline rather than being treated as isolated administrative commands.
 
 Discovery Findings
