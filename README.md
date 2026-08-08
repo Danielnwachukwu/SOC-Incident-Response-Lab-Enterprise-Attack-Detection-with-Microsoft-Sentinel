@@ -42,7 +42,7 @@ The investigation successfully reconstructed the attack lifecycle and demonstrat
 
 ## Investigation Workflow
 
-```text
+
 Azure Environment Deployment
         │
         ▼
