@@ -1511,7 +1511,7 @@ The response followed a structured SOC incident-response lifecycle:
 6. **Validation**
 7. **Lessons Learned**
 
-1.1 Incident Confirmation
+11.1 Incident Confirmation
 
 The incident was confirmed by correlating multiple sources of endpoint telemetry rather than relying on a single event.
 
