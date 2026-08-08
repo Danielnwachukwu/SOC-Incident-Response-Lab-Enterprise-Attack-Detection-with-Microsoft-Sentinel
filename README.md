@@ -1911,47 +1911,41 @@ Post-remediation validation
 
 The complete investigation can therefore be summarized as follows:
 
-Reconnaissance
-      │
-      │ Nmap / Network Enumeration
-      ▼
-Initial Access
-      │
-      │ RDP Authentication Attempts
-      ▼
-PowerShell Execution
-      │
-      │ Command Execution / Process Analysis
-      ▼
-Discovery
-      │
-      │ Users / System / Network / Processes / Services
-      ▼
-Persistence
-      │
-      │ Registry Run Key
-      ▼
-Defense Evasion
-      │
-      │ Artifact Removal
-      ▼
-Ingress Tool Transfer
-      │
-      │ BITSAdmin
-      ▼
-Scheduled Task Abuse
-      │
-      │ Task Creation / Recurring Execution
-      ▼
-Threat Hunting
-      │
-      │ Cross-Source Correlation
-      ▼
-Incident Response
-      │
-      │ Containment / Eradication / Validation
-      ▼
-Post-Incident Verification
+The complete investigation can therefore be summarized as follows:
+
+1. **Reconnaissance**
+   - Nmap / Network Enumeration
+
+2. **Initial Access**
+   - RDP Authentication Attempts
+
+3. **PowerShell Execution**
+   - Command Execution / Process Analysis
+
+4. **Discovery**
+   - Users / System / Network / Processes / Services
+
+5. **Persistence**
+   - Registry Run Key
+
+6. **Defense Evasion**
+   - Artifact Removal
+
+7. **Ingress Tool Transfer**
+   - BITSAdmin
+
+8. **Scheduled Task Abuse**
+   - Task Creation / Recurring Execution
+
+9. **Threat Hunting**
+   - Cross-Source Correlation
+
+10. **Incident Response**
+    - Containment / Eradication / Validation
+
+11. **Post-Incident Verification**
+   
+
 15. Investigation Evidence Correlation
 
 The investigation demonstrated the importance of correlating multiple telemetry sources.
