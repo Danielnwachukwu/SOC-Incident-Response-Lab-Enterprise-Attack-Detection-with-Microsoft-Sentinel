@@ -849,36 +849,19 @@ Get-ItemProperty `
 
 The command allowed the analyst to verify the presence of the suspicious Run Key.
 
-6.5 Persistence Investigation Methodology
+### 6.5 Persistence Investigation Methodology
 
 The investigation followed the following workflow:
 
-Registry Modification Detected
-            │
-            ▼
-Identify Registry Path
-            │
-            ▼
-Identify Registry Value
-            │
-            ▼
-Identify Modifying Process
-            │
-            ▼
-Review PowerShell Command Line
-            │
-            ▼
-Identify User Context
-            │
-            ▼
-Correlate Timestamp
-            │
-            ▼
-Validate Persistence Mechanism
-            │
-            ▼
-Determine Malicious Intent
-
+1. **Registry Modification Detected**
+2. **Identify Registry Path**
+3. **Identify Registry Value**
+4. **Identify Modifying Process**
+5. **Review PowerShell Command Line**
+6. **Identify User Context**
+7. **Correlate Timestamp**
+8. **Validate Persistence Mechanism**
+9. **Determine Malicious Intent**
 This approach allowed the analyst to establish both what was modified and which process performed the modification.
 
 Persistence Findings
