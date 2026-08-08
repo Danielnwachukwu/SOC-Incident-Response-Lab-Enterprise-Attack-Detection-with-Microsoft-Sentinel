@@ -6,7 +6,7 @@
 
 ## Business Challenge
 
-A multinational organization recently migrated critical Windows infrastructure to Microsoft Azure to support its remote workforce.
+A multinational organization recently migrated critical Windows infrastructure to Microsoft Azure to support its remote workforce. 
 
 Following the migration, the Security Operations Center (SOC) began observing suspicious authentication attempts, PowerShell activity, registry modifications, scheduled task creation, and outbound network communications originating from a production Windows Server.
 
