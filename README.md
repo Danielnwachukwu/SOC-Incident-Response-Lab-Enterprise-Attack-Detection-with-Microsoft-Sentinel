@@ -1419,11 +1419,6 @@ Hostname
 
 The authentication activity was compared against the reconnaissance and initial-access stages to determine whether the events formed part of the same attack sequence.
 
-10.8 Attack Timeline Correlation
-
-The most important objective of the threat-hunting phase was to correlate events into a single attack timeline.
-
-The investigation followed the sequence:
 
 ### 10.8 Attack Timeline Correlation
 
@@ -1478,6 +1473,7 @@ The investigation followed a hypothesis-driven approach:
 7. **Identify Additional Indicators**
 8. **Reconstruct Attack Sequence**
 9. **Determine Impact**
+
 This methodology mirrors a practical SOC threat-hunting workflow where analysts continuously pivot between related telemetry rather than investigating individual events in isolation.
 
 MITRE ATT&CK Mapping — Threat Hunting
@@ -1513,8 +1509,6 @@ The objective was to contain the simulated compromise, remove attacker-controlle
 
 The response followed a structured SOC incident-response lifecycle:
 
-The response followed a structured SOC incident-response lifecycle:
-
 1. **Detection**
 2. **Analysis**
 3. **Containment**
@@ -1522,7 +1516,8 @@ The response followed a structured SOC incident-response lifecycle:
 5. **Recovery**
 6. **Validation**
 7. **Lessons Learned**
-11.1 Incident Confirmation
+
+1.1 Incident Confirmation
 
 The incident was confirmed by correlating multiple sources of endpoint telemetry rather than relying on a single event.
 
