@@ -1425,35 +1425,22 @@ The most important objective of the threat-hunting phase was to correlate events
 
 The investigation followed the sequence:
 
-Reconnaissance
-      │
-      ▼
-RDP Authentication Attempts
-      │
-      ▼
-PowerShell Execution
-      │
-      ▼
-System Discovery
-      │
-      ▼
-Registry Persistence
-      │
-      ▼
-Defense Evasion
-      │
-      ▼
-Ingress Tool Transfer
-      │
-      ▼
-Scheduled Task Abuse
-      │
-      ▼
-Threat Hunting
-      │
-      ▼
-Incident Response
+### 10.8 Attack Timeline Correlation
 
+The most important objective of the threat-hunting phase was to correlate events into a single attack timeline.
+
+The investigation followed the sequence:
+
+1. **Reconnaissance**
+2. **RDP Authentication Attempts**
+3. **PowerShell Execution**
+4. **System Discovery**
+5. **Registry Persistence**
+6. **Defense Evasion**
+7. **Ingress Tool Transfer**
+8. **Scheduled Task Abuse**
+9. **Threat Hunting**
+10. **Incident Response**
 The correlation of timestamps, processes, users, hosts, command lines, and network activity allowed the analyst to determine whether apparently separate events were part of the same simulated intrusion.
 
 10.9 Threat Hunting Findings
