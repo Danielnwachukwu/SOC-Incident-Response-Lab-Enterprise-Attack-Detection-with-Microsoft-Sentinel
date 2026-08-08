@@ -345,13 +345,13 @@ The investigation therefore proceeded to the **Initial Access** phase, where rep
 
 ---
 
-3. Initial Access
+### 3. Initial Access
 
 Following reconnaissance, the attacker identified Remote Desktop Protocol (RDP) as an exposed remote service on the target Windows Server.
 
 The objective of this phase was to simulate repeated authentication attempts against the exposed RDP service and determine whether the activity could be detected and investigated through Microsoft Sentinel and Windows security telemetry.
 
-3.1 RDP Authentication Attempt
+### 3.1 RDP Authentication Attempt
 
 The attacker initiated an RDP connection toward the Windows Server.
 
@@ -359,7 +359,7 @@ The initial connection attempt established the conditions required to generate a
 
 Evidence
 
-3.2 Failed RDP Authentication
+### 3.2 Failed RDP Authentication
 
 The target rejected the attempted authentication.
 
@@ -374,7 +374,7 @@ Associated Windows Security Event IDs
 Whether the activity represented isolated failure or repeated attack behavior
 Evidence
 
-3.3 Repeated Authentication Attempts
+### 3.3 Repeated Authentication Attempts
 
 Multiple authentication attempts were generated against the exposed RDP service.
 
@@ -389,7 +389,7 @@ The activity was therefore investigated as a potential initial-access attempt ra
 
 Evidence
 
-3.4 Microsoft Sentinel Investigation
+### 3.4 Microsoft Sentinel Investigation
 
 Microsoft Sentinel was used to investigate the authentication activity generated during the simulation.
 
@@ -409,7 +409,7 @@ This allowed the authentication activity to be investigated from the perspective
 
 Evidence
 
-3.5 Authentication Event Analysis
+### 3.5 Authentication Event Analysis
 
 The Windows authentication telemetry provided additional context surrounding the failed login attempts.
 
@@ -424,7 +424,8 @@ Destination workstation
 Logon type
 Failure reason
 Timestamp
-3.6 Initial Access Assessment
+
+### 3.6 Initial Access Assessment
 
 The authentication activity demonstrated that the exposed RDP service represented a viable attack surface.
 
@@ -536,7 +537,7 @@ The purpose of the simulation was to generate endpoint and network telemetry tha
 
 Evidence
 
-4.5 Microsoft Sentinel PowerShell Investigation
+### 4.5 Microsoft Sentinel PowerShell Investigation
 
 Microsoft Sentinel was used to search the collected endpoint telemetry for PowerShell-related activity.
 
@@ -555,7 +556,7 @@ The resulting telemetry was correlated with the broader attack timeline to deter
 
 Evidence
 
-4.6 Process Lineage Analysis
+### 4.6 Process Lineage Analysis
 
 Process lineage was examined to determine how PowerShell was launched.
 
@@ -647,7 +648,7 @@ The command can provide an attacker with information about accounts that may be 
 
 Evidence
 
-5.2 System Information Discovery
+### 5.2 System Information Discovery
 
 System information was examined to identify details about the compromised host.
 
@@ -668,7 +669,7 @@ This type of information can help an attacker understand the target environment 
 
 Evidence
 
-5.3 Network Configuration Discovery
+### 5.3 Network Configuration Discovery
 
 The network configuration of the Windows Server was examined to identify available interfaces, IP addresses, gateways, and other network information.
 
@@ -680,7 +681,7 @@ Network configuration can provide useful information about the host's location w
 
 Evidence
 
-5.4 Process Enumeration
+### 5.4 Process Enumeration
 
 Running processes were examined to identify applications and services currently executing on the endpoint.
 
@@ -700,7 +701,7 @@ From a SOC perspective, process enumeration also provides useful evidence for de
 
 Evidence
 
-5.5 Service Discovery
+### 5.5 Service Discovery
 
 Windows services were examined to identify services currently installed or running on the endpoint.
 
@@ -712,7 +713,7 @@ Service information may help an attacker identify privileged services, security 
 
 Evidence
 
-5.6 Discovery Activity Investigation in Microsoft Sentinel
+### 5.6 Discovery Activity Investigation in Microsoft Sentinel
 
 Microsoft Sentinel was used to investigate the endpoint telemetry associated with the discovery commands.
 
@@ -743,7 +744,7 @@ The investigation followed a process-oriented approach:
 8. **Determine Attacker Intent**
 This approach allowed the discovery commands to be evaluated within the context of the complete attack timeline rather than being treated as isolated administrative commands.
 
-Discovery Findings
+### Discovery Findings
 
 The discovery phase demonstrated post-compromise enumeration of the Windows environment.
 
@@ -800,7 +801,7 @@ The registry modification was investigated as a potential persistence mechanism 
 
 Evidence
 
-6.2 Registry Modification Detection
+### 6.2 Registry Modification Detection
 
 Sysmon registry telemetry was reviewed to identify the modification of the Windows Registry.
 
@@ -818,7 +819,7 @@ This information was used to establish whether the registry modification origina
 
 Evidence
 
-6.3 Microsoft Sentinel Persistence Investigation
+### 6.3 Microsoft Sentinel Persistence Investigation
 
 Microsoft Sentinel was used to investigate the registry modification and correlate it with the PowerShell process responsible for creating the persistence mechanism.
 
@@ -836,7 +837,7 @@ The correlation provided evidence linking the persistence mechanism to the broad
 
 Evidence
 
-6.4 Persistence Validation
+### 6.4 Persistence Validation
 
 After identifying the Registry Run Key, the persistence mechanism was validated to determine whether the registry entry existed on the endpoint and whether it could trigger execution during user logon.
 
@@ -906,7 +907,7 @@ Remove-Item "C:\Path\To\Artifact" -Force
 
 The activity was investigated to determine whether the command was executed interactively or as part of the previously observed PowerShell activity.
 
-7.2 PowerShell Evidence Collection
+### 7.2 PowerShell Evidence Collection
 
 The PowerShell process responsible for the activity was examined using Sysmon telemetry.
 
@@ -924,7 +925,7 @@ This provided additional context for determining whether the cleanup activity wa
 
 Evidence
 
-7.3 Microsoft Sentinel Investigation
+### 7.3 Microsoft Sentinel Investigation
 
 Microsoft Sentinel was used to search the endpoint telemetry associated with the defense-evasion activity.
 
@@ -940,7 +941,7 @@ Event timestamps
 Related file activity
 Evidence
 
-7.4 Artifact Validation
+### 7.4 Artifact Validation
 
 The analyst validated whether the targeted artifact still existed on the endpoint after the simulated cleanup activity.
 
@@ -1014,7 +1015,7 @@ bitsadmin /transfer UpdateJob /download /priority normal https://example.com/tes
 
 The activity was investigated to determine whether the BITS transfer was associated with the previously observed attacker activity.
 
-8.2 BITSAdmin Process Execution
+### 8.2 BITSAdmin Process Execution
 
 The endpoint telemetry was examined to identify the process responsible for initiating the transfer.
 
@@ -1030,7 +1031,7 @@ Destination file
 Network destination
 Evidence
 
-8.3 File Creation Analysis
+### 8.3 File Creation Analysis
 
 Following the transfer attempt, the destination location was examined to determine whether a new file had been created on the endpoint.
 
@@ -1047,7 +1048,7 @@ File creation telemetry was correlated with the BITSAdmin process to determine w
 
 Evidence
 
-8.4 Microsoft Sentinel Investigation
+### 8.4 Microsoft Sentinel Investigation
 
 Microsoft Sentinel was used to investigate the BITSAdmin activity and correlate process and network telemetry.
 
@@ -1080,7 +1081,7 @@ The investigation followed this workflow:
 9. **Determine Transfer Activity**
 This approach allowed the analyst to investigate the complete transfer operation rather than relying on a single process event.
 
-8.6 SOC Investigation Perspective
+### 8.6 SOC Investigation Perspective
 
 From a SOC perspective, the presence of BITSAdmin does not automatically indicate malicious activity.
 
@@ -1148,7 +1149,7 @@ schtasks /create /tn "WindowsUpdateCheck" /tr "powershell.exe -Command <command>
 
 The scheduled task was created for controlled lab purposes to demonstrate how this persistence technique can be detected through endpoint telemetry.
 
-9.2 PowerShell-Based Scheduled Task Creation
+### 9.2 PowerShell-Based Scheduled Task Creation
 
 PowerShell was also examined as a potential mechanism for creating the scheduled task.
 
@@ -1162,7 +1163,7 @@ The use of PowerShell provided additional telemetry that could be correlated wit
 
 Evidence
 
-9.3 Scheduled Task Enumeration
+### 9.3 Scheduled Task Enumeration
 
 The analyst enumerated scheduled tasks on the endpoint to validate whether the suspicious task existed.
 
@@ -1182,7 +1183,7 @@ Last execution time
 
 The resulting information was compared against the task identified during the investigation.
 
-9.4 Microsoft Sentinel Investigation
+### 9.4 Microsoft Sentinel Investigation
 
 Microsoft Sentinel was used to investigate the scheduled-task activity and correlate it with the surrounding endpoint telemetry.
 
@@ -1215,7 +1216,7 @@ The investigation followed the process lineage:
 7. **Compare With Previous Attack Activity**
 This process helped establish whether the scheduled task was an isolated administrative action or part of the simulated attack chain.
 
-9.6 Persistence Validation
+### 9.6 Persistence Validation
 
 The analyst validated the scheduled task after creation to determine whether it remained present on the endpoint.
 
@@ -1233,7 +1234,7 @@ The task executed under an appropriate account
 
 This validation provided additional evidence for the persistence assessment.
 
-9.7 Scheduled Task Investigation Methodology
+### 9.7 Scheduled Task Investigation Methodology
 
 The investigation followed a structured workflow:
 
@@ -1333,7 +1334,7 @@ Event
 
 This type of query allowed the analyst to identify PowerShell execution and examine the surrounding process context.
 
-10.3 Suspicious Process Hunting
+### 10.3 Suspicious Process Hunting
 
 Process creation telemetry was searched for unusual or potentially suspicious processes.
 
@@ -1357,7 +1358,7 @@ Event
 
 The results were reviewed for processes that appeared inconsistent with normal administrative activity.
 
-10.4 Network Connection Hunting
+### 10.4 Network Connection Hunting
 
 Sysmon network connection telemetry was examined to identify outbound connections associated with suspicious processes.
 
@@ -1377,7 +1378,8 @@ Destination port
 Connection timestamp
 User context
 Whether the connection corresponded with previously observed PowerShell or transfer activity
-10.5 Registry Modification Hunting
+
+### 10.5 Registry Modification Hunting
 
 Registry telemetry was searched for modifications associated with persistence.
 
@@ -1391,7 +1393,7 @@ Event
 
 The results were correlated with the previously identified Registry Run Key persistence activity.
 
-10.6 Scheduled Task Hunting
+### 10.6 Scheduled Task Hunting
 
 Scheduled-task activity was investigated to identify task creation associated with suspicious processes.
 
@@ -1403,7 +1405,7 @@ Register-ScheduledTask
 
 The purpose was to determine whether additional scheduled tasks existed beyond the task identified during the primary investigation.
 
-10.7 Authentication Hunting
+### 10.7 Authentication Hunting
 
 Authentication telemetry was reviewed to identify suspicious login activity associated with the simulated attack.
 
@@ -1438,7 +1440,7 @@ The investigation followed the sequence:
 10. **Incident Response**
 The correlation of timestamps, processes, users, hosts, command lines, and network activity allowed the analyst to determine whether apparently separate events were part of the same simulated intrusion.
 
-10.9 Threat Hunting Findings
+### 10.9 Threat Hunting Findings
 
 The threat-hunting phase demonstrated the importance of investigating beyond individual alerts.
 
@@ -1511,7 +1513,7 @@ The response followed a structured SOC incident-response lifecycle:
 6. **Validation**
 7. **Lessons Learned**
 
-11.1 Incident Confirmation
+### 11.1 Incident Confirmation
 
 The incident was confirmed by correlating multiple sources of endpoint telemetry rather than relying on a single event.
 
@@ -1528,7 +1530,7 @@ Scheduled task activity
 
 The correlation of these events established a consistent attack sequence across the monitored Windows endpoint.
 
-11.2 Indicators of Compromise
+### 11.2 Indicators of Compromise
 
 The investigation extracted relevant indicators from the collected telemetry.
 
@@ -1547,7 +1549,7 @@ Relevant timestamps
 
 These indicators were used to support investigation, containment, and post-incident validation.
 
-11.3 Containment
+### 11.3 Containment
 
 The first response objective was to prevent further attacker activity against the affected endpoint.
 
@@ -1578,7 +1580,7 @@ The <PID> value was replaced with the confirmed process ID identified during inv
 
 The process was not terminated solely because it appeared unusual; process termination was performed only after correlating the process with the investigation evidence.
 
-11.4 Persistence Removal
+### 11.4 Persistence Removal
 
 The identified Registry Run Key persistence mechanism was removed from the endpoint.
 
@@ -1595,7 +1597,7 @@ Remove-ItemProperty `
 
 The registry was then queried again to verify that the persistence mechanism had been removed.
 
-11.5 Scheduled Task Removal
+### 11.5 Scheduled Task Removal
 
 The suspicious scheduled task identified during the investigation was validated before removal.
 
@@ -1609,7 +1611,7 @@ schtasks /delete /tn "WindowsUpdateCheck" /f
 
 The task was then queried again to verify that it was no longer present.
 
-11.6 Removal of Transferred Artifacts
+### 11.6 Removal of Transferred Artifacts
 
 Files transferred during the simulated attack were identified using the previously collected file path and process telemetry.
 
@@ -1631,7 +1633,7 @@ False
 
 confirmed that the specified artifact was no longer present at that location.
 
-11.7 Artifact and Persistence Validation
+### 11.7 Artifact and Persistence Validation
 
 Following containment and eradication, the endpoint was checked for evidence that the previously identified attacker mechanisms had been removed.
 
@@ -1655,7 +1657,7 @@ Test-Path "C:\Users\Public\test.txt"
 
 The objective was to confirm that the identified persistence mechanism, transferred artifact, suspicious process, and associated network activity had been addressed.
 
-11.8 Microsoft Sentinel Post-Response Investigation
+### 11.8 Microsoft Sentinel Post-Response Investigation
 
 Microsoft Sentinel was used after remediation to search for continued evidence of the simulated attacker activity.
 
@@ -1673,7 +1675,7 @@ The purpose of this step was to verify that remediation had not merely removed a
 
 Evidence
 
-11.9 Detection Validation
+### 11.9 Detection Validation
 
 After remediation, the same detection logic used during the investigation was re-evaluated.
 
@@ -1688,7 +1690,7 @@ Previously identified indicators continued to appear in telemetry
 
 This provided an additional layer of confidence that the simulated compromise had been contained.
 
-11.10 Incident Response Evidence
+### 11.10 Incident Response Evidence
 
 The incident-response evidence demonstrated the transition from detection to active remediation.
 
