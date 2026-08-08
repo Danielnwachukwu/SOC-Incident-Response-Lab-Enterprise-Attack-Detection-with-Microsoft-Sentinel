@@ -2196,7 +2196,7 @@ The investigation demonstrated detection opportunities across multiple stages of
 9. **Scheduled Task Abuse**
 10. **Threat Hunting**
 11. **Incident Response**
-12. **Post-Incident Validation**
+12. **Post-Incident Validation** 
 
 The combination of endpoint telemetry and centralized SIEM investigation provided visibility across the simulated attack lifecycle.
 
