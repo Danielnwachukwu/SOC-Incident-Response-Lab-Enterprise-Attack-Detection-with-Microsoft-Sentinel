@@ -956,36 +956,19 @@ would indicate that the specified file or artifact was no longer present at that
 
 The result was considered alongside the original process telemetry rather than being treated as standalone evidence.
 
-7.5 Defense Evasion Investigation Methodology
+### 7.5 Defense Evasion Investigation Methodology
 
 The investigation followed this workflow:
 
-Suspicious Cleanup Activity Detected
-              │
-              ▼
-Identify Executing Process
-              │
-              ▼
-Review PowerShell Command Line
-              │
-              ▼
-Identify User Context
-              │
-              ▼
-Identify Targeted Artifact
-              │
-              ▼
-Review Sysmon Telemetry
-              │
-              ▼
-Correlate With Previous Events
-              │
-              ▼
-Validate Artifact State
-              │
-              ▼
-Assess Defense Evasion
-
+1. **Suspicious Cleanup Activity Detected**
+2. **Identify Executing Process**
+3. **Review PowerShell Command Line**
+4. **Identify User Context**
+5. **Identify Targeted Artifact**
+6. **Review Sysmon Telemetry**
+7. **Correlate With Previous Events**
+8. **Validate Artifact State**
+9. **Assess Defense Evasion**
 This methodology allowed the analyst to determine whether artifact removal was connected to the simulated attack rather than assuming that every file deletion represented malicious activity.
 
 Defense Evasion Findings
