@@ -1454,12 +1454,6 @@ Scheduled tasks
 
 This broader approach provided additional context for the incident and supported reconstruction of the complete attack sequence.
 
-Evidence
-
-Threat Hunting Methodology
-
-The investigation followed a hypothesis-driven approach:
-
 ### Threat Hunting Methodology
 
 The investigation followed a hypothesis-driven approach:
