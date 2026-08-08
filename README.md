@@ -1065,36 +1065,19 @@ The objective was to establish a relationship between the process that initiated
 
 Evidence
 
-8.5 BITS Transfer Investigation Workflow
+### 8.5 BITS Transfer Investigation Workflow
 
 The investigation followed this workflow:
 
-BITSAdmin Execution Detected
-            │
-            ▼
-Identify Process
-            │
-            ▼
-Review Command Line
-            │
-            ▼
-Identify Remote Resource
-            │
-            ▼
-Identify Destination File
-            │
-            ▼
-Review Network Telemetry
-            │
-            ▼
-Review File Creation
-            │
-            ▼
-Correlate Timestamps
-            │
-            ▼
-Determine Transfer Activity
-
+1. **BITSAdmin Execution Detected**
+2. **Identify Process**
+3. **Review Command Line**
+4. **Identify Remote Resource**
+5. **Identify Destination File**
+6. **Review Network Telemetry**
+7. **Review File Creation**
+8. **Correlate Timestamps**
+9. **Determine Transfer Activity**
 This approach allowed the analyst to investigate the complete transfer operation rather than relying on a single process event.
 
 8.6 SOC Investigation Perspective
