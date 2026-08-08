@@ -78,6 +78,8 @@ Incident Response
         ▼
 Post-Incident Validation
 
+---
+
 Project Objectives
 
 This investigation was designed to:
