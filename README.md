@@ -2183,17 +2183,20 @@ This workflow represents the investigation methodology applied throughout the pr
 
 The investigation demonstrated detection opportunities across multiple stages of the simulated attack.
 
-Attack Activity	Primary Telemetry
-Network reconnaissance	Network / host telemetry
-RDP authentication	Windows Security Events
-PowerShell execution	Sysmon / PowerShell telemetry
-Process creation	Sysmon Event ID 1
-Network connections	Sysmon Event ID 3
-Registry persistence	Sysmon Registry Events
-File activity	Sysmon / Windows telemetry
-BITSAdmin transfer	Process + Network + File telemetry
-Scheduled task creation	Windows / Process telemetry
-Post-incident validation	Microsoft Sentinel queries
+## Investigation Workflow
+
+1. **Azure Environment Deployment**
+2. **Reconnaissance**
+3. **Initial Access (RDP)**
+4. **PowerShell Execution**
+5. **Discovery**
+6. **Persistence**
+7. **Defense Evasion**
+8. **Ingress Tool Transfer**
+9. **Scheduled Task Abuse**
+10. **Threat Hunting**
+11. **Incident Response**
+12. **Post-Incident Validation**
 
 The combination of endpoint telemetry and centralized SIEM investigation provided visibility across the simulated attack lifecycle.
 
