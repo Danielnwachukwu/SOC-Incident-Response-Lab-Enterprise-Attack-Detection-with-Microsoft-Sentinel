@@ -1465,32 +1465,19 @@ Threat Hunting Methodology
 
 The investigation followed a hypothesis-driven approach:
 
-Define Investigation Hypothesis
-            │
-            ▼
-Search Relevant Telemetry
-            │
-            ▼
-Identify Suspicious Events
-            │
-            ▼
-Pivot Using Host / User / Process
-            │
-            ▼
-Correlate Timestamps
-            │
-            ▼
-Investigate Related Activity
-            │
-            ▼
-Identify Additional Indicators
-            │
-            ▼
-Reconstruct Attack Sequence
-            │
-            ▼
-Determine Impact
+### Threat Hunting Methodology
 
+The investigation followed a hypothesis-driven approach:
+
+1. **Define Investigation Hypothesis**
+2. **Search Relevant Telemetry**
+3. **Identify Suspicious Events**
+4. **Pivot Using Host / User / Process**
+5. **Correlate Timestamps**
+6. **Investigate Related Activity**
+7. **Identify Additional Indicators**
+8. **Reconstruct Attack Sequence**
+9. **Determine Impact**
 This methodology mirrors a practical SOC threat-hunting workflow where analysts continuously pivot between related telemetry rather than investigating individual events in isolation.
 
 MITRE ATT&CK Mapping — Threat Hunting
