@@ -1565,7 +1565,7 @@ Discovery commands
 Registry modifications
 File activity
 Network connections
-Scheduled tasks
+Scheduled tasks 
 
 This broader approach provided additional context for the incident and supported reconstruction of the complete attack sequence.
 
