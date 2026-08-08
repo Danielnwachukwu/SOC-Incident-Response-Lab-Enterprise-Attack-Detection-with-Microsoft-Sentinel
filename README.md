@@ -1780,13 +1780,14 @@ The investigation reconstructed the simulated attack as a sequence of related ac
 8. **Scheduled Task Abuse**
 9. **Threat Hunting**
 10. **Incident Response**
+
 The attack timeline was reconstructed by correlating timestamps across authentication, process, network, registry, file, and scheduled-task telemetry.
 
 The timeline was not based on a single log source.
 
 Instead, Microsoft Sentinel was used to correlate multiple telemetry sources collected from the Windows endpoint.
 
-13.1 Reconnaissance
+1 Reconnaissance
 
 The attacker performed network and service enumeration against the target environment.
 
@@ -1797,7 +1798,8 @@ Service enumeration
 Public IP information gathering
 Reverse DNS enumeration
 RDP service verification
-13.2 Initial Access
+
+2 Initial Access
 
 The attacker attempted to access the exposed Windows Server through RDP.
 
@@ -1807,7 +1809,8 @@ RDP connection attempts
 Failed authentication
 Repeated authentication activity
 Investigation of Windows authentication telemetry
-13.3 PowerShell Execution
+
+3 PowerShell Execution
 
 PowerShell activity was subsequently investigated on the Windows Server.
 
@@ -1818,7 +1821,8 @@ Command-line arguments
 Parent-child process relationships
 User context
 Network activity
-13.4 Discovery
+
+4 Discovery
 
 The attacker performed host enumeration to collect information about the compromised environment.
 
@@ -1829,7 +1833,8 @@ System information discovery
 Network configuration discovery
 Process enumeration
 Service enumeration
-13.5 Persistence
+
+5 Persistence
 
 A Registry Run Key persistence mechanism was investigated.
 
@@ -1840,13 +1845,14 @@ PowerShell execution
 User context
 Process ID
 Timestamp
-13.6 Defense Evasion
+
+6 Defense Evasion
 
 The investigation identified activity associated with the removal of attacker-generated artifacts.
 
 The activity was correlated with the previously observed PowerShell execution and investigated as a potential attempt to reduce forensic visibility.
 
-13.7 Ingress Tool Transfer
+7 Ingress Tool Transfer
 
 The simulated attacker used BITS functionality to transfer content from an external resource to the Windows Server.
 
@@ -1857,7 +1863,8 @@ Command-line activity
 Network connection
 Destination file
 File creation telemetry
-13.8 Scheduled Task Abuse
+
+8 Scheduled Task Abuse
 
 The attacker created a scheduled task capable of executing commands automatically.
 
@@ -1869,7 +1876,8 @@ Trigger
 Creating process
 User context
 Command-line arguments
-13.9 Threat Hunting
+
+9 Threat Hunting
 
 Following the individual investigations, broader threat-hunting queries were executed to identify related activity that may not have generated a dedicated alert.
 
@@ -1883,7 +1891,8 @@ Command line
 Network destination
 Registry path
 File path
-13.10 Incident Response
+
+10 Incident Response
 
 The confirmed attacker-controlled artifacts and persistence mechanisms were addressed during the incident-response phase.
 
@@ -1896,7 +1905,8 @@ Scheduled task removal
 Artifact removal
 Network connection review
 Post-remediation validation
-14. Attack Storyline
+
+Attack Storyline
 
 The complete investigation can therefore be summarized as follows:
 
