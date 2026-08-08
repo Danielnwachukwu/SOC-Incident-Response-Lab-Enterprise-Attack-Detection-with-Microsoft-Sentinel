@@ -1237,36 +1237,19 @@ This validation provided additional evidence for the persistence assessment.
 
 The investigation followed a structured workflow:
 
-Scheduled Task Activity Detected
-            │
-            ▼
-Identify Task Name
-            │
-            ▼
-Identify Task Action
-            │
-            ▼
-Identify Trigger
-            │
-            ▼
-Identify Creating Process
-            │
-            ▼
-Review Command Line
-            │
-            ▼
-Identify User Context
-            │
-            ▼
-Correlate With Previous Events
-            │
-            ▼
-Validate Persistence
-            │
-            ▼
-Assess Malicious Intent
-Scheduled Task Findings
+### Threat Hunting Methodology
 
+The investigation followed a hypothesis-driven approach:
+
+1. **Define Investigation Hypothesis**
+2. **Search Relevant Telemetry**
+3. **Identify Suspicious Events**
+4. **Pivot Using Host / User / Process**
+5. **Correlate Timestamps**
+6. **Investigate Related Activity**
+7. **Identify Additional Indicators**
+8. **Reconstruct Attack Sequence**
+9. **Determine Impact**
 The scheduled-task phase demonstrated how legitimate Windows Task Scheduler functionality can be abused to establish recurring execution.
 
 The investigation correlated task configuration, process creation, command-line information, user context, and timestamps to determine whether the activity was consistent with the simulated attack.
