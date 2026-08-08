@@ -1952,56 +1952,26 @@ File System	Artifact creation and removal
 
 The combination of these sources provided greater investigative confidence than relying on a single event or alert.
 
-16. SOC Investigation Workflow
+## 16. SOC Investigation Workflow
 
 The investigation followed a repeatable SOC workflow:
 
-Alert / Suspicious Activity
-          │
-          ▼
-Triage
-          │
-          ▼
-Validate Event
-          │
-          ▼
-Identify Host
-          │
-          ▼
-Identify User
-          │
-          ▼
-Identify Process
-          │
-          ▼
-Review Command Line
-          │
-          ▼
-Check Network Activity
-          │
-          ▼
-Check Persistence
-          │
-          ▼
-Correlate Timeline
-          │
-          ▼
-Map MITRE ATT&CK
-          │
-          ▼
-Determine Scope
-          │
-          ▼
-Contain
-          │
-          ▼
-Eradicate
-          │
-          ▼
-Validate
-          │
-          ▼
-Document
+1. **Alert / Suspicious Activity**
+2. **Triage**
+3. **Validate Event**
+4. **Identify Host**
+5. **Identify User**
+6. **Identify Process**
+7. **Review Command Line**
+8. **Check Network Activity**
+9. **Check Persistence**
+10. **Correlate Timeline**
+11. **Map MITRE ATT&CK**
+12. **Determine Scope**
+13. **Contain**
+14. **Eradicate**
+15. **Validate**
+16. **Document**
 
 This workflow represents the investigation methodology applied throughout the project and demonstrates how a SOC analyst can progress from an individual event to a complete incident narrative.
 
