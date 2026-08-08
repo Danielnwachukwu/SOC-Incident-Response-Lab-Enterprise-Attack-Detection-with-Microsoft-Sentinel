@@ -1781,39 +1781,16 @@ The mapping connects the technical evidence collected during the investigation w
 
 The investigation reconstructed the simulated attack as a sequence of related activities:
 
-01. Reconnaissance
-        │
-        ▼
-02. Initial Access
-        │
-        ▼
-03. PowerShell Execution
-        │
-        ▼
-04. Discovery
-        │
-        ▼
-05. Persistence
-        │
-        ▼
-06. Defense Evasion
-        │
-        ▼
-07. Ingress Tool Transfer
-        │
-        ▼
-08. Scheduled Task Abuse
-        │
-        ▼
-09. Threat Hunting
-        │
-        ▼
-10. Incident Response
-
-The sequence demonstrates how individual endpoint events can be correlated into a broader intrusion narrative.
-
-13. Attack Timeline
-
+1. **Reconnaissance**
+2. **Initial Access**
+3. **PowerShell Execution**
+4. **Discovery**
+5. **Persistence**
+6. **Defense Evasion**
+7. **Ingress Tool Transfer**
+8. **Scheduled Task Abuse**
+9. **Threat Hunting**
+10. **Incident Response**
 The attack timeline was reconstructed by correlating timestamps across authentication, process, network, registry, file, and scheduled-task telemetry.
 
 The timeline was not based on a single log source.
