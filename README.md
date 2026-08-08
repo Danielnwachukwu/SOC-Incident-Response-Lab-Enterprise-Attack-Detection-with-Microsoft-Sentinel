@@ -343,46 +343,47 @@ Response actions included:
 
 - Stop-Process -Name bitsadmin -Force
 
-  ## Remove Registry Run Key persistence
+## Remove Registry Run Key persistence
 
- - Remove-ItemProperty `
+- Remove-ItemProperty `
 -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" `
 -Name "WindowsUpdate"
 
 ## Verify Registry Run Keys
 
-Get-ItemProperty `
+- Get-ItemProperty `
 -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run"
 
 ## Delete Scheduled Task
 
-schtasks /Delete /TN "Windows Update Service" /F
+- schtasks /Delete /TN "Windows Update Service" /F
 
 ## Verify Scheduled Tasks
 
-schtasks /Query /FO LIST
+- schtasks /Query /FO LIST
 
 ## Delete downloaded payload
 
-Remove-Item `
+- Remove-Item `
 "C:\Users\azureuser\Downloads\favicon.ico" `
 -Force
 
 ## Confirm file removal
 
-Get-ChildItem `
+- Get-ChildItem `
 "C:\Users\azureuser\Downloads"
 
 ## Review active network connections
 
-Get-NetTCPConnection
+- Get-NetTCPConnection
 
 ## Review active PowerShell processes
 
-Get-Process powershell
-Post-Incident Validation
+- Get-Process powershell
 
-After remediation, Microsoft Sentinel hunting queries were executed to verify that malicious activity had ceased.
+## Post-Incident Validation
+
+ After remediation, Microsoft Sentinel hunting queries were executed to verify that malicious activity had ceased.
 
 ---
 
