@@ -1513,26 +1513,15 @@ The objective was to contain the simulated compromise, remove attacker-controlle
 
 The response followed a structured SOC incident-response lifecycle:
 
-Detection
-   │
-   ▼
-Analysis
-   │
-   ▼
-Containment
-   │
-   ▼
-Eradication
-   │
-   ▼
-Recovery
-   │
-   ▼
-Validation
-   │
-   ▼
-Lessons Learned
+The response followed a structured SOC incident-response lifecycle:
 
+1. **Detection**
+2. **Analysis**
+3. **Containment**
+4. **Eradication**
+5. **Recovery**
+6. **Validation**
+7. **Lessons Learned**
 11.1 Incident Confirmation
 
 The incident was confirmed by correlating multiple sources of endpoint telemetry rather than relying on a single event.
