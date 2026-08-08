@@ -42,7 +42,6 @@ The investigation successfully reconstructed the attack lifecycle and demonstrat
 
 ## Investigation Workflow
 
-```text
 Azure Environment Deployment
             │
             ▼
@@ -514,7 +513,6 @@ The simulated command was directed toward a benign test resource.
 
 Example:
 
-```powershell
 Invoke-WebRequest -Uri "https://example.com"
 
 The purpose of the simulation was to generate endpoint and network telemetry that could subsequently be investigated through Microsoft Sentinel.
@@ -642,7 +640,6 @@ The attacker used the Windows `net user` command to enumerate local user account
 
 Example command:
 
-```powershell
 net user
 
 The command can provide an attacker with information about accounts that may be useful for subsequent credential attacks, privilege escalation, or lateral movement.
@@ -808,7 +805,6 @@ The activity was performed using PowerShell.
 
 Example:
 
-```powershell
 New-ItemProperty `
 -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" `
 -Name "WindowsUpdate" `
@@ -937,7 +933,6 @@ The investigation focused on identifying commands that could remove files, tempo
 
 Example:
 
-```powershell
 Remove-Item "C:\Path\To\Artifact" -Force
 
 The activity was investigated to determine whether the command was executed interactively or as part of the previously observed PowerShell activity.
@@ -1062,7 +1057,6 @@ BITS is a legitimate Windows component designed to perform background file trans
 
 Example:
 
-```cmd
 bitsadmin /transfer UpdateJob /download /priority normal https://example.com/test.txt C:\Users\Public\test.txt
 
 
@@ -1214,7 +1208,6 @@ The activity was investigated to determine:
 
 Example:
 
-```cmd
 schtasks /create /tn "WindowsUpdateCheck" /tr "powershell.exe -Command <command>" /sc onlogon
 
 
@@ -1426,7 +1419,6 @@ The investigation examined:
 
 Example KQL investigation pattern:
 
-```kql
 Event
 | where Source == "Microsoft-Windows-Sysmon"
 | where EventID == 1
@@ -1642,7 +1634,6 @@ The objective was to contain the simulated compromise, remove attacker-controlle
 
 The response followed a structured SOC incident-response lifecycle:
 
-```text
 Detection
    │
    ▼
@@ -1922,7 +1913,6 @@ The mapping connects the technical evidence collected during the investigation w
 
 The investigation reconstructed the simulated attack as a sequence of related activities:
 
-```text
 01. Reconnaissance
         │
         ▼
@@ -2252,7 +2242,6 @@ The queries below represent the investigation approach used throughout the proje
 
 ## 13.1 PowerShell Process Detection
 
-```kql
 Event
 | where Source == "Microsoft-Windows-Sysmon"
 | where EventID == 1
