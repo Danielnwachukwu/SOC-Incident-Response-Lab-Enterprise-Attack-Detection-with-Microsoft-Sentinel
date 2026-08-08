@@ -175,7 +175,7 @@ Successful Azure Windows Server deployment:
 
 Windows Server environment:
 
-![Windows Server Environment](Images/01-Lab-Deployment/02_Windows_Server_Environment.png)
+![Windows Server Environment](Images/01-Lab-Deployment/03_First_Login_Windows_Server_Azure.png)
 
 ---
 
@@ -189,11 +189,11 @@ The environment was connected to Azure Log Analytics to allow Windows and Sysmon
 
 Microsoft Sentinel workspace configuration:
 
-![Microsoft Sentinel Workspace](Images/01-Lab-Deployment/03_Microsoft_Sentinel_Workspace.png)
+![Microsoft Sentinel Workspace](Images/03-Initial-Access/12_Sentinel_Event4625_Failed_Logon_Details.png)
 
 Log Analytics configuration:
 
-![Log Analytics Workspace](Images/01-Lab-Deployment/04_Log_Analytics_Workspace.png)
+![Log Analytics Workspace](Images/03-Initial-Access/14_Sentinel_Event4625_Event_Analysis.png)
 
 ---
 
@@ -217,11 +217,11 @@ This endpoint telemetry was subsequently collected and investigated through Micr
 
 Sysmon installation and configuration:
 
-![Sysmon Deployment](Images/01-Lab-Deployment/05_Sysmon_Deployment.png)
+![Sysmon Deployment](Images/01-Lab-Deployment/05_Sysmon_Installation_Completed.png)
 
 Sysmon operational telemetry:
 
-![Sysmon Operational Logs](Images/01-Lab-Deployment/06_Sysmon_Operational_Logs.png)
+![Sysmon Operational Logs](Images/04-PowerShell-Execution/02_Sentinel_Sysmon_Process_Creation_PowerShell.png)
 
 ---
 
@@ -467,7 +467,7 @@ The investigation focused on:
 
 ### Evidence
 
-![PowerShell Process Creation](Images/04-PowerShell-Execution/15_PowerShell_Process_Creation.png)
+![PowerShell Process Creation](Images/04-PowerShell-Execution/02_Sentinel_Sysmon_Process_Creation_PowerShell.png)
 
 ---
 
@@ -481,7 +481,7 @@ The analyst therefore examined the command-line parameters and surrounding proce
 
 ### Evidence
 
-![PowerShell Command-Line Analysis](Images/04-PowerShell-Execution/16_PowerShell_Command_Line_Analysis.png)
+![PowerShell Command-Line Analysis](Images/04-PowerShell-Execution/01_PowerShell_Local_Discovery_Commands.png)
 
 ---
 
@@ -502,7 +502,7 @@ This allowed PowerShell process activity to be correlated with network telemetry
 
 ### Evidence
 
-![PowerShell Network Activity](Images/04-PowerShell-Execution/17_PowerShell_Network_Connection.png)
+![PowerShell Network Activity](Images/05-Discovery/Images/06-Persistence/Images/07-Ingress-Tool-Transfer/05_Sentinel_Sysmon_Network_Connection_EventID3.png)
 
 ---
 
