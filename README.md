@@ -1200,32 +1200,19 @@ The objective was to determine whether the scheduled task was created by the sam
 
 Evidence
 
-9.5 Process Correlation
+### 9.5 Process Correlation
 
 The scheduled-task creation event was correlated with the process responsible for creating it.
 
 The investigation followed the process lineage:
 
-Scheduled Task Creation
-          │
-          ▼
-Identify Creating Process
-          │
-          ▼
-Identify Parent Process
-          │
-          ▼
-Review Command Line
-          │
-          ▼
-Identify User Context
-          │
-          ▼
-Correlate Timestamp
-          │
-          ▼
-Compare With Previous Attack Activity
-
+1. **Scheduled Task Creation**
+2. **Identify Creating Process**
+3. **Identify Parent Process**
+4. **Review Command Line**
+5. **Identify User Context**
+6. **Correlate Timestamp**
+7. **Compare With Previous Attack Activity**
 This process helped establish whether the scheduled task was an isolated administrative action or part of the simulated attack chain.
 
 9.6 Persistence Validation
