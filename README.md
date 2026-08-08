@@ -314,6 +314,90 @@ All attacker actions were successfully detected using Microsoft Sentinel and Sys
 
 ---
 
+## Incident Response Actions
+
+Following validation of the attack timeline, containment and eradication activities were performed to remove attacker artifacts and restore the endpoint to a trusted state.
+
+Response actions included:
+
+- Terminated malicious PowerShell and BITSAdmin processes.
+- Removed Registry Run Key persistence.
+- Deleted malicious Scheduled Tasks.
+- Removed downloaded attacker files.
+- Verified no additional persistence mechanisms remained.
+- Validated endpoint telemetry after remediation.
+- Re-ran Microsoft Sentinel hunting queries to confirm successful eradication.
+
+---
+ ## Example Response Commands
+
+ ## Terminate suspicious PowerShell process
+
+- Get-Process powershell
+
+- Stop-Process -Id <PID> -Force
+
+ ## Terminate BITSAdmin process
+
+- Get-Process bitsadmin
+
+- Stop-Process -Name bitsadmin -Force
+
+  ## Remove Registry Run Key persistence
+
+ - Remove-ItemProperty `
+-Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" `
+-Name "WindowsUpdate"
+
+## Verify Registry Run Keys
+
+Get-ItemProperty `
+-Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run"
+
+## Delete Scheduled Task
+
+schtasks /Delete /TN "Windows Update Service" /F
+
+## Verify Scheduled Tasks
+
+schtasks /Query /FO LIST
+
+## Delete downloaded payload
+
+Remove-Item `
+"C:\Users\azureuser\Downloads\favicon.ico" `
+-Force
+
+## Confirm file removal
+
+Get-ChildItem `
+"C:\Users\azureuser\Downloads"
+
+## Review active network connections
+
+Get-NetTCPConnection
+
+## Review active PowerShell processes
+
+Get-Process powershell
+Post-Incident Validation
+
+After remediation, Microsoft Sentinel hunting queries were executed to verify that malicious activity had ceased.
+
+---
+
+## Validation activities included:
+
+Confirmed no new Sysmon Event ID 1 entries for malicious PowerShell execution.
+Confirmed no additional Event ID 13 Registry Run Key modifications.
+Confirmed no further Event ID 11 file creation associated with attacker tools.
+Confirmed no subsequent BITSAdmin process executions.
+Confirmed scheduled task persistence had been removed.
+Confirmed no additional suspicious outbound network connections (Sysmon Event ID 3).
+Reviewed endpoint telemetry to ensure normal system operation.
+
+---
+
 # Skills Demonstrated
 
 - Security Monitoring
